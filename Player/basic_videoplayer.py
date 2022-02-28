@@ -5,18 +5,15 @@ import tkinter as tk
 from tkinter import *
 from tkvideo import tkvideo
 import pygame
-import logging
 
 
 root = tk.Tk()
 
 pygame.mixer.init()
 
-# currentAnimation = "Model\\polarbear_videoB0001-0080.mp4"
-# backgroundMusic = "Sound\\coralbackgrnd.mp3"
 
 def videoPlayBack(currentAnimation,backgroundMusic,varNarration):
-    player = tkvideo(currentAnimation, my_label, loop = 1, size = (1920,1080))
+    player = tkvideo(currentAnimation, my_label, loop = 1, size = (640,360))
     player.play()
     ##############################################
     pygame.mixer.music.set_volume(0.1)
@@ -41,7 +38,7 @@ polarBearButton = tk.Button(
     height=5,
     bg="blue",
     fg="yellow",
-    command=lambda: [videoPlayBack("Model\\polarbear_videoB0001-0080.mp4","Sound\\coralbackgrnd.mp3","Sound\\Kiss & Tell.mp3"), polarBearButton.pack_forget()]
+    command=lambda: [videoPlayBack("Model/polarbear_videoB0001-0080.mp4","Sound/coralbackgrnd.mp3","Sound/polar-bear-samples/roar-sound.wav"), polarBearButton.pack_forget()]
 )
 
 polarBearButton.pack()
